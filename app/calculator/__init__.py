@@ -13,12 +13,12 @@ providing a comprehensive learning experience for students.
 """
 
 import sys
-try:
+try:  # pragma: no cover
     import readline  # Unix-like systems: enables command history and line editing
-except ImportError:
-    try:
+except ImportError:  # pragma: no cover
+    try:  # pragma: no cover
         import pyreadline as readline 
-    except Exception:
+    except ImportError:  # pragma: no cover
         readline = None
 
 from typing import List
