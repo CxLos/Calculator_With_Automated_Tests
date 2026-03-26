@@ -111,9 +111,9 @@ class CalculatorConfig:
         return Path(os.getenv(
             'CALCULATOR_LOG_DIR',
             str(self.base_dir / "logs")
-        )).resolve()
+        )).resolve() # use resolve() to get the absolute path, ensuring it works correctly regardless of the current working directory.
 
-    @property # For history_dir and history_file, we use @property to ensure they are computed based on the current base_dir and environment variables when accessed.
+    @property # For history_dir and history_file, use @property to ensure they are computed based on the current base_dir and environment variables when accessed.
     def history_dir(self) -> Path:
         """
         Get history directory path.
